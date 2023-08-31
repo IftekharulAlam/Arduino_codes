@@ -14,7 +14,7 @@ const char* password = "01521439838";
 
 //Your Domain name with URL path or IP address with path
 String serverName = "https://192.168.0.100:8000/sendTempHumData";
-const char fingerprint[] PROGMEM = "django-insecure-^=!xqb)lg(v@a@n$+5e=_seuzi(v2ns8kq7)vw+9t3o@eva=c*";
+
 
 void setup() {
   // put your setup code here, to run once:
@@ -32,8 +32,7 @@ void setup() {
 
   Serial.println("Timer set to 5 seconds (timerDelay variable), it will take 5 seconds before publishing the first reading.");
 }
-
-void loop() {
+void getTempHumidityData() {
   // put your main code here, to run repeatedly:
   //  float h = dht.readHumidity();
   //  // Read temperature as Celsius (the default)
@@ -75,5 +74,9 @@ void loop() {
   else {
     Serial.println("WiFi Disconnected");
   }
+
+}
+void loop() {
+  getTempHumidityData();
 
 }

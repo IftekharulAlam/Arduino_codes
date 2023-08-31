@@ -19,7 +19,7 @@ void setup() {
   pinMode(algieLight1, INPUT);
 
   myservo.attach(servo_pin);
-  myservo.write(50);
+  myservo.write(45);
 }
 
 void loop() {

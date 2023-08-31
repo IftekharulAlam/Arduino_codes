@@ -1,0 +1,40 @@
+{
+  "packages": [
+    {
+      "name": "LinkIt",
+      "maintainer": "Seeed Studio and MediaTek Labs",
+      "websiteURL": "http://labs.mediatek.com/7688",
+      "help": {
+        "online": "http://labs.mediatek.com/7688faq"
+      },
+      "platforms":[
+            {
+               "name":"LinkIt Smart 7688 Duo",
+               "architecture":"avr",
+               "version": "$sdk_version",
+               "category":"Contributed",
+               "url":"http://download.labs.mediatek.com/$sdk_zip_name",
+               "archiveFileName": "$sdk_zip_name",
+               "checksum": "SHA-256:$sdk_zip_checksum",
+               "size": "$sdk_zip_size",
+               "boards":[
+                  { "name":"LinkIt Smart 7688 Duo" }
+               ],
+               "toolsDependencies":[
+                  {
+                     "packager":"arduino",
+                     "name":"avr-gcc",
+                     "version":"4.8.1-arduino5"
+                  },
+                  {
+                     "packager":"arduino",
+                     "name":"avrdude",
+                     "version":"6.0.1-arduino5"
+                  }
+               ]
+            }
+         ],
+      "tools":[]
+    }
+  ]
+}
