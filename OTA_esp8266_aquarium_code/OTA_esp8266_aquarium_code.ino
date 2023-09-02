@@ -7,6 +7,7 @@
 #include <ESP8266HTTPClient.h>
 #include <ESPAsyncTCP.h>
 #include <ESPAsyncWebServer.h>
+#include <ArduinoJson.h>
 
 int mainLight =  D1; // Digital pin connected to aquarium main Light
 int algieLight =  D2;// Digital pin connected to aquarium algie Light

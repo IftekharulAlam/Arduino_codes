@@ -70,6 +70,8 @@ String processor(const String& var) {
   }
   return String();
 }
+
+
 void serverinit() {
   // Route for root / web page
   server.on("/", HTTP_GET, [](AsyncWebServerRequest * request) {
@@ -80,7 +82,20 @@ void serverinit() {
   });
   server.on("/humidity", HTTP_GET, [](AsyncWebServerRequest * request) {
     request->send_P(200, "text/plain", String(h).c_str());
+
   });
+  server.on("/getTemparatureDataApp", HTTP_GET, [](AsyncWebServerRequest * request) {
+    AsyncResponseStream *response = request->beginResponseStream("application/json");
+    DynamicJsonDocument json(1024);
+    json["tempData"] = String(t);
+    json["humidity"] = String(h);
+    json["ID"] = WiFi.localIP().toString();
+    serializeJson(json, *response);
+
+    request->send(response);
+
+  });
+
 
   // Start server
   server.begin();
