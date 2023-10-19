@@ -30,7 +30,7 @@ const long utcOffsetInSeconds = 21600;
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP, "pool.ntp.org", utcOffsetInSeconds);
 
-String serverName = "https://192.168.0.103:8080/sendTempHumData";
+String serverName = "http://192.168.0.100:8080/sendTempHumData";
 
 AsyncWebServer server(80);
 float t = 0.0;
@@ -42,6 +42,7 @@ void serverinit();
 String processor(const String& var);
 void aquariumLightsCode();
 void aquariumLightsInitCode();
+void sendToServer();
 void setup() {
   wifiinit();
   otainit();
@@ -55,6 +56,7 @@ void setup() {
 void loop() {
   ArduinoOTA.handle();
   getTempHumidityData();
+  // sendToServer();
   aquariumLightsCode();
 
 }
