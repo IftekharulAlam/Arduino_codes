@@ -1,5 +1,5 @@
 // ArduinoJson - https://arduinojson.org
-// Copyright © 2014-2023, Benoit BLANCHON
+// Copyright © 2014-2024, Benoit BLANCHON
 // MIT License
 
 #include <ArduinoJson.h>
@@ -12,7 +12,7 @@ TEST_CASE("JsonObject::isNull()") {
   }
 
   SECTION("returns false") {
-    DynamicJsonDocument doc(4096);
+    JsonDocument doc;
     JsonObject obj = doc.to<JsonObject>();
     REQUIRE(obj.isNull() == false);
   }
@@ -25,7 +25,7 @@ TEST_CASE("JsonObjectConst::isNull()") {
   }
 
   SECTION("returns false") {
-    DynamicJsonDocument doc(4096);
+    JsonDocument doc;
     JsonObjectConst obj = doc.to<JsonObject>();
     REQUIRE(obj.isNull() == false);
   }
@@ -38,7 +38,7 @@ TEST_CASE("JsonObject::operator bool()") {
   }
 
   SECTION("returns true") {
-    DynamicJsonDocument doc(4096);
+    JsonDocument doc;
     JsonObject obj = doc.to<JsonObject>();
     REQUIRE(static_cast<bool>(obj) == true);
   }
@@ -51,7 +51,7 @@ TEST_CASE("JsonObjectConst::operator bool()") {
   }
 
   SECTION("returns true") {
-    DynamicJsonDocument doc(4096);
+    JsonDocument doc;
     JsonObjectConst obj = doc.to<JsonObject>();
     REQUIRE(static_cast<bool>(obj) == true);
   }

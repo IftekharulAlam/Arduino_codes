@@ -1,12 +1,12 @@
 // ArduinoJson - https://arduinojson.org
-// Copyright © 2014-2023, Benoit BLANCHON
+// Copyright © 2014-2024, Benoit BLANCHON
 // MIT License
 
 #include <ArduinoJson.h>
 #include <catch.hpp>
 
 TEST_CASE("JsonVariant::operator[]") {
-  DynamicJsonDocument doc(4096);
+  JsonDocument doc;
   JsonVariant var = doc.to<JsonVariant>();
 
   SECTION("The JsonVariant is null") {
@@ -50,7 +50,7 @@ TEST_CASE("JsonVariant::operator[]") {
     }
 
     SECTION("set value in a nested object") {
-      array.createNestedObject();
+      array.add<JsonObject>();
 
       var[0]["hello"] = "world";
 
@@ -132,7 +132,7 @@ TEST_CASE("JsonVariant::operator[]") {
 }
 
 TEST_CASE("JsonVariantConst::operator[]") {
-  DynamicJsonDocument doc(4096);
+  JsonDocument doc;
   JsonVariant var = doc.to<JsonVariant>();
   JsonVariantConst cvar = var;
 

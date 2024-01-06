@@ -1,5 +1,5 @@
 // ArduinoJson - https://arduinojson.org
-// Copyright © 2014-2023, Benoit BLANCHON
+// Copyright © 2014-2024, Benoit BLANCHON
 // MIT License
 
 #include <ArduinoJson.h>
@@ -7,7 +7,7 @@
 
 template <typename TArray>
 static void run_iterator_test() {
-  StaticJsonDocument<JSON_ARRAY_SIZE(2)> doc;
+  JsonDocument doc;
   JsonArray tmp = doc.to<JsonArray>();
   tmp.add(12);
   tmp.add(34);

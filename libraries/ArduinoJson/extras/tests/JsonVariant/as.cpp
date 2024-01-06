@@ -1,5 +1,5 @@
 // ArduinoJson - https://arduinojson.org
-// Copyright © 2014-2023, Benoit BLANCHON
+// Copyright © 2014-2024, Benoit BLANCHON
 // MIT License
 
 #include <ArduinoJson.h>
@@ -15,7 +15,7 @@ enum MY_ENUM { ONE = 1, TWO = 2 };
 TEST_CASE("JsonVariant::as()") {
   static const char* null = 0;
 
-  DynamicJsonDocument doc(4096);
+  JsonDocument doc;
   JsonVariant variant = doc.to<JsonVariant>();
 
   SECTION("not set") {

@@ -1,5 +1,5 @@
 // ArduinoJson - https://arduinojson.org
-// Copyright © 2014-2023, Benoit BLANCHON
+// Copyright © 2014-2024, Benoit BLANCHON
 // MIT License
 
 #include <ArduinoJson.h>
@@ -7,7 +7,7 @@
 #include <catch.hpp>
 
 TEST_CASE("JsonVariant::containsKey()") {
-  DynamicJsonDocument doc(4096);
+  JsonDocument doc;
   JsonVariant var = doc.to<JsonVariant>();
 
   SECTION("containsKey(const char*)") {
@@ -26,7 +26,7 @@ TEST_CASE("JsonVariant::containsKey()") {
 }
 
 TEST_CASE("JsonVariantConst::containsKey()") {
-  DynamicJsonDocument doc(4096);
+  JsonDocument doc;
   doc["hello"] = "world";
   JsonVariantConst cvar = doc.as<JsonVariant>();
 

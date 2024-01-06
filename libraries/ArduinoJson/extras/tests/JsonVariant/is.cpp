@@ -1,5 +1,5 @@
 // ArduinoJson - https://arduinojson.org
-// Copyright © 2014-2023, Benoit BLANCHON
+// Copyright © 2014-2024, Benoit BLANCHON
 // MIT License
 
 #include <ArduinoJson.h>
@@ -8,7 +8,7 @@
 enum MYENUM2 { ONE = 1, TWO = 2 };
 
 TEST_CASE("JsonVariant::is<T>()") {
-  DynamicJsonDocument doc(4096);
+  JsonDocument doc;
   JsonVariant variant = doc.to<JsonVariant>();
 
   SECTION("unbound") {
@@ -164,7 +164,7 @@ TEST_CASE("JsonVariant::is<T>()") {
 }
 
 TEST_CASE("JsonVariantConst::is<T>()") {
-  DynamicJsonDocument doc(4096);
+  JsonDocument doc;
   JsonVariant variant = doc.to<JsonVariant>();
   JsonVariantConst cvariant = variant;
 

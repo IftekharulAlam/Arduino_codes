@@ -1,16 +1,16 @@
 // ArduinoJson - https://arduinojson.org
-// Copyright © 2014-2023, Benoit BLANCHON
+// Copyright © 2014-2024, Benoit BLANCHON
 // MIT License
 
 #include <ArduinoJson.h>
 #include <catch.hpp>
 
 TEST_CASE("JsonObject::operator==()") {
-  DynamicJsonDocument doc1(4096);
+  JsonDocument doc1;
   JsonObject obj1 = doc1.to<JsonObject>();
   JsonObjectConst obj1c = obj1;
 
-  DynamicJsonDocument doc2(4096);
+  JsonDocument doc2;
   JsonObject obj2 = doc2.to<JsonObject>();
   JsonObjectConst obj2c = obj2;
 
